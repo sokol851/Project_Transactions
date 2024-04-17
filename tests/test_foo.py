@@ -25,6 +25,12 @@ def test_jet_json_data():
                                            'to': 'Счет 90424923579946435907'}
 
 
+def test_jet_json_data_options():
+    FILE_PATH = os.path.join(ROOT_DIR, 'tests', 'test_operations.json')
+    if jet_json_data(FILE_PATH)[0]['state'] != None:
+        assert jet_json_data(FILE_PATH)[0]['state'] == 'EXECUTED' or 'CANCELED'
+
+
 def test_jet_last_executed():
     FILE_PATH = os.path.join(ROOT_DIR, 'tests', 'test_operations.json')
     if len(FILE_PATH) > 5:
