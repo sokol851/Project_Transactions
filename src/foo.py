@@ -32,14 +32,14 @@ def jet_last_executed():
             if i['description'] != 'Открытие вклада':
                 if 'Счет' not in i['from']:
                     i['from'] = f"{i['from'][:-12]} {i['from'][-12:-10]}** **** {i['from'][-4:]}"
-                    i['to'] = f"{i['to'][:-20]}**{i['to'][-5:-1]}"
+                    i['to'] = f"{i['to'][:-20]}**{i['to'][-4:]}"
                     last_executed.append(i)
                 if 'Счет' in i['from']:
                     i['from'] = f"{i['from'][:-20]}**{i['from'][-4:]}"
-                    i['to'] = f"{i['to'][:-20]}**{i['to'][-5:-1]}"
+                    i['to'] = f"{i['to'][:-20]}**{i['to'][-4:]}"
                     last_executed.append(i)
             if i['description'] == 'Открытие вклада':
-                i['to'] = f"{i['to'][:-20]}**{i['to'][-5:-1]}"
+                i['to'] = f"{i['to'][:-20]}**{i['to'][-4:]}"
                 last_executed.append(i)
     return last_executed[0:5]
 
