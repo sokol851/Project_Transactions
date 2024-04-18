@@ -27,7 +27,7 @@ def test_jet_json_data():
 
 def test_jet_json_data_options():
     FILE_PATH = os.path.join(ROOT_DIR, 'tests', 'test_operations.json')
-    if jet_json_data(FILE_PATH)[0]['state'] != None:
+    if jet_json_data(FILE_PATH)[0]['state'] is None:
         assert jet_json_data(FILE_PATH)[0]['state'] == 'EXECUTED' or 'CANCELED'
 
 
