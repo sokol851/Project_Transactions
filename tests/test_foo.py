@@ -22,13 +22,20 @@ def test_jet_json_data():
                                                      'code': 'USD'}
                                                 },
                                            'description': 'Открытие вклада',
-                                           'to': 'Счет 90424923579946435907'}
+                                           'to': 'Счет 90424923579946435907'
+                                           }
 
 
-def test_jet_json_data_options():
+def test_jet_json_data_state():
     FILE_PATH = os.path.join(ROOT_DIR, 'tests', 'test_operations.json')
-    if jet_json_data(FILE_PATH)[0]['state'] is None:
-        assert jet_json_data(FILE_PATH)[0]['state'] == 'EXECUTED' or 'CANCELED'
+    for i in range(99):
+        assert jet_json_data(FILE_PATH)[i]['state'] is 'EXECUTED' or 'CANCELED'
+
+
+def test_jet_json_data_description():
+    FILE_PATH = os.path.join(ROOT_DIR, 'tests', 'test_operations.json')
+    for i in range(99):
+        assert jet_json_data(FILE_PATH)[i]['description'] is 'Перевод организации' or 'Открытие вклада' or 'Перевод со счета на счет'
 
 
 def test_jet_last_executed():
