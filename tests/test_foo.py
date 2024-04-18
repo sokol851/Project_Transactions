@@ -35,7 +35,8 @@ def test_jet_json_data_state():
 def test_jet_json_data_description():
     FILE_PATH = os.path.join(ROOT_DIR, 'tests', 'test_operations.json')
     for i in range(99):
-        assert jet_json_data(FILE_PATH)[i]['description'] is 'Перевод организации' or 'Открытие вклада' or 'Перевод со счета на счет'
+        assert (jet_json_data(FILE_PATH)[i]['description'] is 'Перевод организации' or 'Открытие вклада' or
+                'Перевод со счета на счет')
 
 
 def test_jet_last_executed():
