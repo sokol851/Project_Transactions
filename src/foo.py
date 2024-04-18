@@ -56,5 +56,6 @@ def output_last_operations():
                           f"{i['operationAmount']['amount']} {i['operationAmount']['currency']['name']}\n")
         else:
             output.append(f"{i['date']} {i['description']}\n"
-                          f"{i['to']}\n")
+                          f"{i['to']}\n"
+                          f"{i['operationAmount']['amount']} {i['operationAmount']['currency']['name']}\n")
     return output
