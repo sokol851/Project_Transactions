@@ -1,5 +1,5 @@
 from config import ROOT_DIR
-from src.foo import jet_last_executed, jet_json_data, output_last_operations
+from src.utils import jet_last_executed, jet_json_data, output_last_operations
 import pytest
 import os
 

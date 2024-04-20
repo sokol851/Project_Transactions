@@ -8,7 +8,7 @@ def jet_json_data(path):
     """
     Получает список транзакций и сортирует по дате.
     """
-    with open(path) as json_data:
+    with open(path, 'r', encoding='utf-8') as json_data:
         data = []
         for i in json.load(json_data):
             if i != {}:
